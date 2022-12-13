@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{ 
+int n;
+int sum = 1 ;
+int i=0;
+int h;
+
+
+printf("Poso megalos na einai o pinakas:");
+scanf("%d", &n);
+
+int numbers[n];
+	
+	while (i<n)
+	{ 
+	printf ("Enter a number:"); 
+
+	scanf("%d", &h );
+	numbers[i]=h;
+	sum=sum*numbers[i];
+	++i;
+	 } 
+	 
+	 printf("Sum: %d", sum);
+	 
+	 return 0;
+ } 
