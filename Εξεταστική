@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+
+int main()
+{
+	int choice;
+	
+	
+	printf("Choose the option you want to do first:\n1.From binary to decimal\n2.From decimal to binary\n3.Exit\n");
+	
+	scanf("%d",&choice);
+
+	switch(choice)
+	{
+		case '1':
+			printf("Hello");
+			break;
+			
+		case '2':
+			printf("Hi");
+			break;
+		
+		case '3': 
+			printf("Goodbye");
+			break;
+			
+		default:
+			printf("Something went wrong");
+	}
+	
+	return 0;
+}
