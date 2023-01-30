@@ -12,17 +12,12 @@ int main()
 
 	switch(choice)
 	{
-		case '1':
-			printf("Hello");
-			break;
+		case 1:b2d(); break;
 			
-		case '2':
-			printf("Hi");
-			break;
+		case 2:d2b(); break;
 		
-		case '3': 
-			printf("Goodbye");
-			break;
+		case 3: 
+                       printf("Exiting the program") exit; break;
 			
 		default:
 			printf("Something went wrong");
