@@ -1,5 +1,111 @@
 #include<stdio.h>
+#include <stdlib.h>
 
+
+
+	void d2b(){
+	
+
+	int decip[4];
+	
+	
+	int rep=5;
+	int n=1;
+	
+	printf("Enter 32-bit IP address in dotted decimal notation (xxx.xxx.xxx.xxx)\n: ");
+	scanf ("%d.%d.%d.%d",&decip[1],&decip[2],&decip[3],&decip[4]);
+    printf("\n\n\n\n\n");
+	
+	
+	printf ("The decip is: %d.%d.%d.%d\n",decip[1],decip[2],decip[3],decip[4]);
+	printf ("The binip is:");
+	
+	while ( n < rep ){
+		
+		//check ip validity
+		if ( decip[n] > 255 || decip[n] < 0){
+			printf("Invalid input string (incorrect numbers for IP address)\n");
+		}
+
+	
+		int bin[32]; 
+		int i=0;
+		int dec=decip[n];
+		   
+		while ( dec > 0 ){
+			bin[i++] = dec % 2;
+			dec = dec / 2;
+		}
+		   
+
+		int j = i-1;
+			  
+		while (j >= 0){
+			printf("%d", bin[j]);
+			j--;
+		  }
+		if (3 >= n){
+		printf (".");
+		}
+		++n;
+	
+	}
+	
+}
+	
+	void b2d(){
+	
+
+	int binip[4];
+	
+
+	int decip[4];
+	
+	int rep=5;
+	int n=1;
+	
+	printf("Enter 32-bit IP address in dotted binary notation (xxx.xxx.xxx.xxx)\n: ");
+	scanf ("%d.%d.%d.%d",&binip[1],&binip[2],&binip[3],&binip[4]);
+	
+	printf("\n\n\n");
+	
+	while ( n < rep ){
+		
+
+		if ( binip[n] > 11111111 || binip[n] < 0){
+			printf("Invalid input string (incorrect numbers for IP address)\n");
+		}
+		
+		
+		int dec=0;
+		int base=1;
+		int bin;
+		int rem;
+		
+		bin = binip[n];
+		int tmp = bin;
+		
+		while ( tmp > 0  ) {
+		
+		rem  = tmp % 10;
+		dec  = dec + rem * base;
+		tmp  = tmp / 10;
+		base = base * 2;
+	
+		}
+	
+		decip[n] = dec;
+		++n;
+		
+	
+	}
+    printf("\n\n\n\n\n");
+	printf ("The binip is: %d.%d.%d.%d\n",binip[1],binip[2],binip[3],binip[4]);
+	printf ("The decip is: %d.%d.%d.%d",decip[1],decip[2],decip[3],decip[4]);
+
+	
+
+}
 
 int main()
 {
@@ -12,16 +118,18 @@ int main()
 
 	switch(choice)
 	{
-		case 1:b2d(); break;
+		case 1: b2d();	break;
 			
-		case 2:d2b(); break;
+		case 2:d2b();	break;
 		
-		case 3: 
-                       printf("Exiting the program") exit; break;
+		case 3:printf("Exiting program!\n"); exit(0); break;
+            
+		default: printf("Invalid choice!\n"); break;
 			
-		default:
-			printf("Something went wrong");
+	
 	}
+	
+	
 	
 	return 0;
 }
