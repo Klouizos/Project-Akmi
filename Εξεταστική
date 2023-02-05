@@ -75,7 +75,7 @@
 		if ( binip[n] > 11111111 || binip[n] < 0){
 			printf("Invalid input string (incorrect numbers for IP address)\n");
 		}
-		else if(binip[n] < 11111111 || binip[n] > 0){
+		
 		
 		int dec=0;
 		int base=1;
