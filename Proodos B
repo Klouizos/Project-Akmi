@@ -1,0 +1,126 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+class robot
+{
+    public:
+    robot(int in_battery);//in=initial
+    void frontstep();
+    void leftturn();
+    void rightturn();
+    void talk();
+    void charge();
+    void initusername();
+
+    private:
+    
+    int battery;
+};//end of class robot
+int main() {
+    robot takis(500);
+    takis.initusername();
+    takis.frontstep();
+    takis.leftturn();
+    takis.frontstep();
+    takis.rightturn();
+    takis.talk();
+    takis.frontstep();
+    takis.leftturn();
+    takis.talk();
+    takis.rightturn();
+    takis.frontstep();
+    takis.talk();
+    takis.frontstep();
+    takis.leftturn();
+    takis.talk();    
+    
+    return 0;
+};
+
+robot::robot(int in_battery)
+{
+    battery=in_battery;
+};//end of robot()
+
+void robot::charge()
+{
+    if(battery <=150)
+    {
+        battery +=300;
+    }
+    cout<<endl<<"Charging...(battery:"<<battery<<")";
+
+};//end of charging()
+
+void robot::frontstep()
+{
+    if(battery >=100){
+        battery -=100;
+        cout<<endl<<"Moving forward! (battery:"<<battery<<")";
+    }
+    else
+    { 
+        if (battery <=100){
+
+        battery +=300;
+         cout<<endl<<"Going to charge!(battery:"<<battery<<")";
+        };
+    };
+       
+};
+void robot::initusername()
+{
+    string usrnm;
+    cout<<endl<<"Give Takis a username:";
+    cin>>usrnm;
+}
+void robot::talk()
+{
+    if(battery >= 75){
+        battery -=75;
+        cout<<endl<<"Hello My Friend,My callsign is";
+        }
+    
+     else
+    { 
+        if (battery <=75){
+
+        battery +=300;
+         cout<<endl<<"Going to charge!(battery:"<<battery<<")";
+        };
+    };
+}
+void robot::leftturn()
+{
+    if(battery >=50){
+        battery -=50;
+        cout<<endl<<"Turning left 90 degree! (battery:"<<battery<<")";
+    }
+    else
+    { 
+        if (battery <=100){
+
+        battery +=300;
+         cout<<endl<<"Going to charge!(battery:"<<battery<<")";
+        };
+    };
+       
+};
+void robot::rightturn()
+{
+    if(battery >=50){
+        battery -=50;
+        cout<<endl<<"Turning right 90 degree! (battery:"<<battery<<")";
+    }
+    else
+    { 
+        if (battery <=50){
+
+        battery +=300;
+         cout<<endl<<"Going to charge!(battery:"<<battery<<")";
+        };
+    };
+       
+};
